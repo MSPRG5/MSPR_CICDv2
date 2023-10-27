@@ -6,16 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
- Check failure on line 8 in .github/workflows/indexmain.yml
-
-GitHub Actions
-/ .github/workflows/indexmain.yml
-Invalid workflow file
-You have an error in your yaml syntax on line 8
     - run: |
-          jar cvf groupe5.war * && ls
-      - name: copy file via ssh password
-      - name: copy file via ssh password
+          jar cvf groupe5.war *
+    - name: copy file via ssh password
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST_DNS }}
